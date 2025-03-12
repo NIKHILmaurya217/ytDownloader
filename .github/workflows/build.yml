@@ -35,14 +35,6 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install buildozer
 
-      - name: Initialize Buildozer
-        run: buildozer init
-
-      - name: Modify buildozer.spec (Optional)
-        run: |
-          # Example: Modify requirements. You can add more modifications as needed.
-          sed -i 's/#requirements = kivy/requirements = kivy,pyjnius/' buildozer.spec
-
       - name: Install Android SDK and NDK
         run: |
           wget https://dl.google.com/android/repository/commandlinetools-linux-10406996_latest.zip
