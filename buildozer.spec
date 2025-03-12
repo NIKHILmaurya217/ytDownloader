@@ -1,59 +1,118 @@
 [app]
-# Application name
-title = TubeSaver
+# (str) Title of your application
+title = MyKivyApp
 
-# Package name (use your unique identifier, usually reverse domain style)
-package.name = tubesaver
-package.domain = com.yourname  # Change this to your domain or leave as is
+# (str) Package name
+package.name = mykivyapp
 
-# Package version
-version = 1.0
+# (str) Package domain
+package.domain = org.example
 
-# The entry point of your application
+# (str) Source code directory (make sure this is correct)
+source.dir = .
+
+# (list) Source files to include (comma-separated)
 source.include_exts = py,png,jpg,kv,atlas
 
-# Main Python file
-source.entrypoint = main.py
+# (str) Main script entry point
+source.entry_point = main.py
 
-# Requirements (libraries needed)
-requirements = python3, kivy, kivymd, yt_dlp, threading, requests, plyer
+# (str) Application version
+version = 1.0
 
-# Presplash and Icon
-icon.filename = %(source.dir)s/data/icon.png
-presplash.filename = %(source.dir)s/data/presplash.png
+# (list) Supported orientations
+orientation = all
 
-# Orientation (leave it as 'sensor' for automatic rotation)
-orientation = portrait
+# (list) Android permissions
+android.permissions = INTERNET, WRITE_EXTERNAL_STORAGE, READ_EXTERNAL_STORAGE
 
-# Fullscreen mode (0 = No, 1 = Yes)
+# (list) Package data to include
+package_data.include_exts = png, jpg, txt, json, csv
+
+# (str) Icon file (optional)
+icon.filename = icon.png
+
+# (str) Presplash screen (optional)
+presplash.filename = presplash.png
+
+# (str) Full-screen mode
 fullscreen = 1
 
-# Enable this if using an internet connection
-internet = true
+# (str) Android log level (options: 1, 2, 3, 4, 5)
+android.log_level = 1
 
-# Permissions required for downloading and saving files
-android.permissions = android.permission.WRITE_EXTERNAL_STORAGE, android.permission.READ_EXTERNAL_STORAGE, android.permission.INTERNET, android.permission.FOREGROUND_SERVICE
+# (bool) Enable AndroidX
+android.enable_androidx = True
 
-# Hide the title bar
-android.hide_status_bar = True
+# (bool) Indicate if the application should be prespawned (faster startup)
+android.prespawn = False
+
+# (list) Gradle dependencies
+android.gradle_dependencies = 
 
 [buildozer]
-# Ignore specific files
-ignore_path = .git,__pycache__,assets,docs
+# (str) Command line arguments for the build process
+buildozer.log_level = 2
+
+[python]
+# (list) Modules required by your app
+requirements = python3,kivy,plyer
 
 [android]
-# Target Android API Level
+# (str) Android API target version
 android.api = 31
-android.minapi = 21
 
-# Architecture support (arm64-v8a & armeabi-v7a for most Android devices)
+# (str) NDK version
+android.ndk = 23b
+
+# (list) Java classes to add manually
+android.add_src = 
+
+# (str) NDK directory
+android.ndk_path = 
+
+# (str) Path to the SDK directory
+android.sdk_path = 
+
+# (str) Build tool version
+android.build_tools_version = 30.0.3
+
+# (list) Local Java classpaths
+android.add_jars = 
+
+# (list) Features required by the app
+android.features = 
+
+# (str) JVM arguments
+android.jvm_args = 
+
+# (str) Additional command-line options
+android.extra_args = 
+
+# (list) Architecture support (armeabi-v7a, arm64-v8a, x86_64, etc.)
 android.archs = arm64-v8a, armeabi-v7a
 
-# Package format
-android.package_format = apk
+# (bool) Enable multi-touch support
+android.multi_touch = True
 
-# Enable android logcat (for debugging)
-log_level = 2
+# (bool) Enable hardware acceleration
+android.hardware_acceleration = True
 
-# Enable Java Debugging
-android.debug = True
+# (list) Additional permissions
+android.additional_permissions = 
+
+[toolchain]
+# (str) Android toolchain directory
+android.toolchain = 
+
+[hostpython]
+# (str) Python version used to build the app
+hostpython = python3
+
+[dependencies]
+# (list) Pip packages required for the app
+android.pip = requests
+
+[settings]
+# (bool) Whether to enable debugging symbols
+debug = False
