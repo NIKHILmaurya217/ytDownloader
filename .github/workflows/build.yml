@@ -10,7 +10,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -36,12 +36,7 @@ jobs:
 
       - name: Initialize Buildozer
         run: buildozer init
-
-      - name: Modify buildozer.spec (Optional)
-        run: |
-          # Example: Modify requirements. You can add more modifications as needed.
-          sed -i 's/#requirements = kivy/requirements = kivy,pyjnius/' buildozer.spec
-
+        
       - name: Cache Buildozer global directory
         uses: actions/cache@v3
         with:
