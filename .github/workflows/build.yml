@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       # used to cache dependencies with a timeout
       - name: Get Date
@@ -36,7 +36,7 @@ jobs:
           buildozer_version: stable
 
       - name: Upload artifacts
-        uses: actions/upload-artifact@v2
+        uses:  actions/upload-pages-artifact@v3
         with:
           name: package
           path: ${{ steps.buildozer.outputs.filename }}
