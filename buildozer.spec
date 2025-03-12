@@ -21,7 +21,8 @@ source.entry_point = main.py
 version = 1.0
 
 # (list) Supported orientations
-orientation = sensor
+orientation = portrait
+
 
 # (list) Android permissions
 android.permissions = INTERNET, WRITE_EXTERNAL_STORAGE, READ_EXTERNAL_STORAGE
